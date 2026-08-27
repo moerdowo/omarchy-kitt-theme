@@ -1,0 +1,40 @@
+# K.I.T.T. — Knight Industries Two Thousand
+# Black-on-black bodywork, amber dash readouts, and that red scanner sweep.
+
+mode = "dark"
+
+accent = "#ff2a1c"
+selection = "#3d100a"
+muted = "#6e2a20"
+
+background = "#0a0a0c"
+dark_background = "#070708"
+darker_background = "#040405"
+lighter_background = "#191315"
+
+foreground = "#e6dcd8"
+dark_foreground = "#6b5b57"
+light_foreground = "#cfc2bd"
+bright_foreground = "#fff2ec"
+
+# The scanner: dark, hot core, dark — swept left to right.
+hyprland_active_border = "rgba(4a0d07ee) rgba(ff2a1cee) rgba(4a0d07ee) 90deg"
+hyprland_inactive_border = "rgba(2b1714aa)"
+active_border_color = "#ff2a1c"
+active_tab_background = "#5c1209"
+
+red = "#ff2a1c"
+yellow = "#ffb347"
+orange = "#ff7a2f"
+green = "#5cc98a"
+cyan = "#4fbfc9"
+blue = "#5f8fd0"
+magenta = "#d2537b"
+brown = "#7d3b23"
+
+bright_red = "#ff5f4f"
+bright_yellow = "#ffd07a"
+bright_green = "#84e2ac"
+bright_cyan = "#8ddde5"
+bright_blue = "#8fb4ea"
+bright_magenta = "#ef7fa2"

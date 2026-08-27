@@ -1,0 +1,53 @@
+# K.I.T.T.
+
+An [Omarchy](https://omarchy.org) theme based on the Knight Industries Two
+Thousand from *Knight Rider* — black-on-black bodywork, amber dash readouts,
+and that red scanner sweep.
+
+## Install
+
+```bash
+omarchy theme install https://github.com/moerdowo/omarchy-kitt-theme.git
+```
+
+Or manually:
+
+```bash
+git clone https://github.com/moerdowo/omarchy-kitt-theme.git ~/.config/omarchy/themes/kitt
+omarchy theme set kitt
+```
+
+## Palette
+
+| Token | Colour | |
+|---|---|---|
+| `background` | `#0a0a0c` | the paintwork |
+| `foreground` | `#e6dcd8` | |
+| `accent` / `red` | `#ff2a1c` | the scanner |
+| `yellow` | `#ffb347` | dash amber |
+| `orange` | `#ff7a2f` | |
+| `selection` | `#3d100a` | |
+
+Window borders use a three-stop Hyprland gradient —
+`rgba(4a0d07ee) → rgba(ff2a1cee) → rgba(4a0d07ee)` at 90° — so the focused
+window reads as a red sweep from left to right. Inactive borders drop to a
+dead `rgba(2b1714aa)`.
+
+Everything else (terminals, btop, neovim via aether, vscode, chromium,
+obsidian, the bar and all shell surfaces) is generated from `colors.toml` by
+Omarchy's own templates.
+
+## Backgrounds
+
+Cycle with `omarchy theme bg next`.
+
+| | |
+|---|---|
+| `1-scanner` | the red sweep across black, white-hot core, CRT scanlines |
+| `2-voice-modulator` | the dash LED bar cluster in red with an amber midline |
+| `3-night-highway` | 80s perspective grid receding to a red horizon glow |
+| `4-black-on-black` | brushed near-black paint, one thin scanner line low in frame |
+| `5-kitt` | the car itself |
+
+1–4 are generated procedurally with ImageMagick at 2880×1800; `regenerate.sh`
+rebuilds them.
