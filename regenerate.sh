@@ -1,6 +1,6 @@
 #!/bin/bash
-# Rebuild the procedural KITT backgrounds (1-4 and omarchy.png) with ImageMagick.
-# 5-kitt.png is composed from a source photo and is not regenerated here.
+# Rebuild the procedural KITT backgrounds (2-5 and omarchy.png) with ImageMagick.
+# 1-kitt-jump.png is composed from a source photo and is not regenerated here.
 set -euo pipefail
 
 W=${W:-2880}; H=${H:-1800}
@@ -24,7 +24,7 @@ magick -size 1x3 xc:none -fill '#00000059' -draw 'point 0,0' "$T/sl.png"
 magick -size ${W}x${H} tile:"$T/sl.png" "$T/scanlines.png"
 magick -size ${W}x${H} radial-gradient:white-black -sigmoidal-contrast 4,55% "$T/vig.png"
 
-# --- 1. Scanner ------------------------------------------------------------
+# --- 2. Scanner ------------------------------------------------------------
 hgauss 0.5 0.34   h_wide.png
 hgauss 0.5 0.20   h_mid.png
 hgauss 0.5 0.09   h_core.png
@@ -43,9 +43,9 @@ magick -size ${W}x${H} xc:"$BG" \
   "$T/l_hot.png"     -compose screen   -composite \
   "$T/scanlines.png" -compose over     -composite \
   "$T/vig.png"       -compose multiply -composite "$T/o1.png"
-save "$T/o1.png" "$OUT/1-scanner.png"
+save "$T/o1.png" "$OUT/2-scanner.png"
 
-# --- 2. Voice modulator ----------------------------------------------------
+# --- 3. Voice modulator ----------------------------------------------------
 BARS=17; BW=52; GAP=44
 TOTAL=$(( BARS*BW + (BARS-1)*GAP )); X0=$(( (W-TOTAL)/2 )); CY=$(( H/2 ))
 HEIGHTS=(0.18 0.31 0.52 0.44 0.70 0.86 0.62 0.95 0.74 0.95 0.58 0.83 0.66 0.41 0.49 0.28 0.16)
@@ -72,9 +72,9 @@ magick -size ${W}x${H} xc:"$BG" \
   "$T/l_wash.png"    -compose screen   -composite \
   "$T/scanlines.png" -compose over     -composite \
   "$T/vig.png"       -compose multiply -composite "$T/o2.png"
-save "$T/o2.png" "$OUT/2-voice-modulator.png"
+save "$T/o2.png" "$OUT/3-voice-modulator.png"
 
-# --- 3. Night highway ------------------------------------------------------
+# --- 4. Night highway ------------------------------------------------------
 HZ=$(( H * 46 / 100 )); VX=$(( W / 2 ))
 grid=""
 for k in $(seq -22 22); do grid+=" line $VX,$HZ $(( VX + k*190 )),$H"; done
@@ -101,9 +101,9 @@ magick -size ${W}x${H} xc:"$BG" \
   "$T/l_hzhot.png"    -compose screen   -composite \
   "$T/scanlines.png"  -compose over     -composite \
   "$T/vig.png"        -compose multiply -composite "$T/o3.png"
-save "$T/o3.png" "$OUT/3-night-highway.png"
+save "$T/o3.png" "$OUT/4-night-highway.png"
 
-# --- 4. Black on black -----------------------------------------------------
+# --- 5. Black on black -----------------------------------------------------
 # noise is generated small and stretched; at full size it is punishingly slow
 magick -size 720x450 xc:gray50 -attenuate 1.0 +noise Gaussian -colorspace Gray \
   -motion-blur 0x14+22 -auto-level -resize ${W}x${H}\! -evaluate multiply 0.11 "$T/sheen.png"
@@ -119,7 +119,7 @@ magick "$T/brushed.png" \
   "$T/l_lobloom.png" -compose screen   -composite \
   "$T/l_lo.png"      -compose screen   -composite \
   "$T/vig.png"       -compose multiply -composite "$T/o4.png"
-save "$T/o4.png" "$OUT/4-black-on-black.png"
+save "$T/o4.png" "$OUT/5-black-on-black.png"
 
 # --- omarchy logo plate ----------------------------------------------------
 PLATE=/usr/share/omarchy/themes/retro-82/backgrounds/omarchy.png
