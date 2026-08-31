@@ -8,6 +8,12 @@ and that red scanner sweep.
 
 ![The theme across a terminal readout, a git graph, and colors.toml in Neovim](docs/screenshot.png)
 
+![cliamp, btop, the theme's files in eza, and the Omarchy About screen](docs/screenshot-apps.png)
+
+*Above: a telemetry readout, a git graph, and `colors.toml` in Neovim.
+Below: cliamp, btop, `eza` over the theme's own files, and the Omarchy
+About screen.*
+
 ## Install
 
 ```bash
