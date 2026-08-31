@@ -1,6 +1,6 @@
 #!/bin/bash
 # Rebuild the procedural KITT backgrounds (2-5 and omarchy.png) with ImageMagick.
-# 1-kitt-jump.png is composed from a source photo and is not regenerated here.
+# 1-kitt-jump.png is an AI-generated image and is not regenerated here.
 set -euo pipefail
 
 W=${W:-2880}; H=${H:-1800}
