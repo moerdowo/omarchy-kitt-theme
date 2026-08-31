@@ -14,13 +14,13 @@ and that red scanner sweep.
 ## Install
 
 ```bash
-omarchy theme install https://github.com/moerdowo/omarchy-kitt-theme.git
+omarchy theme install https://github.com/moerdowo/Omarchy-Kitt-Theme.git
 ```
 
 Or manually:
 
 ```bash
-git clone https://github.com/moerdowo/omarchy-kitt-theme.git ~/.config/omarchy/themes/kitt
+git clone https://github.com/moerdowo/Omarchy-Kitt-Theme.git ~/.config/omarchy/themes/kitt
 omarchy theme set kitt
 ```
 
